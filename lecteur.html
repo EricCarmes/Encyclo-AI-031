@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>SmartBook - Audiobook</title>
+  <title>Smartbook - AudioBook</title>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,82 +14,93 @@
     <img src="Logo_resized.jpg" alt="Logo Encyclo-AI" style="width: 10%; height: auto; margin-bottom: 20px;">
   </div>
 
- 
+<!-- Bloc bouton Play + potentiomètre vitesse -->
+<div class="player-controls">
+  <!-- Gros bouton Play -->
+  <button id="bigPlayBtn" aria-label="Lire ou mettre en pause le livre audio">▶</button>
+
+  <!-- Bloc vitesse -->
+  <div id="speedControl">
+    <div class="speed-label">Vitesse</div>
+    <div class="speed-knob-wrapper">
+      <input type="range" id="speedKnob" min="0.9" max="1.1" step="0.05" value="1" orient="vertical">
+
+      <!-- Colonne repères alignés -->
+      <div id="speedLabels">
+        <span>++</span>
+        <span>+</span>
+        <span>=</span>
+        <span>-</span>
+        <span>--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Lecteur audio -->
   <audio id="audioPlayer" controls></audio>
- 
+
+  <!-- Playlist -->
   <ul id="playlist">
+    <li><a href="Introduction.mp3" style="font-weight: bold;">﻿INTRODUCTION - L'INTERNET : UNE ÉPOPÉE TECHNOLOGIQUE</a></li>
 
-    <!-- ✅ Introduction : lien cliquable en gras -->
-    <li style="margin-top: 15px;"><a href="Introduction.mp3" style="font-weight: bold;">INTRODUCTION - L'INTERNET : UNE EPOPEE TECHNOLOGIQUE</a></li>
-
-    <!-- Chapitre 1 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 1 - LES ORIGINES DE L'INTERNET : ARPANET ET SES PRECURSEURS</li>
+    <li style="font-weight: bold;">Chapitre 1 - LES ORIGINES DE L'INTERNET : ARPANET ET SES PRÉCURSEURS</li>
     <ul>
       <li><a href="Chapitre1-1.mp3">1.1 - Contexte géopolitique et scientifique des années 1960</a></li>
       <li><a href="Chapitre1-2.mp3">1.2 - Les premières théories de la communication entre ordinateurs</a></li>
       <li><a href="Chapitre1-3.mp3">1.3 - La naissance d'ARPANET</a></li>
     </ul>
 
-    <!-- Chapitre 2 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 2 - L'AVENEMENT DU PROTOCOLE TCP/IP</li>
+    <li style="font-weight: bold;">Chapitre 2 - L'AVÈNEMENT DU PROTOCOLE TCP/IP</li>
     <ul>
       <li><a href="Chapitre2-1.mp3">2.1 - Les défis des réseaux hétérogènes</a></li>
       <li><a href="Chapitre2-2.mp3">2.2 - Le développement et l'adoption du TCP/IP</a></li>
       <li><a href="Chapitre2-3.mp3">2.3 - Impact sur l'Internet moderne</a></li>
     </ul>
 
-    <!-- Chapitre 3 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 3 - LES PREMIERES INTERFACES : NAVIGATEURS ET ACCESSIBILITE</li>
+    <li style="font-weight: bold;">Chapitre 3 - LES PREMIÈRES INTERFACES : NAVIGATEURS ET ACCESSIBILITÉ</li>
     <ul>
-      <li><a href="Chapitre3-1.mp3">3.1 - L'émergence des navigateurs Web</a></li>
+      <li><a href="Chapitre3-1.mp3">3.1 - L'émergence des navigateurs web</a></li>
       <li><a href="Chapitre3-2.mp3">3.2 - Démocratisation de l'accès à Internet</a></li>
       <li><a href="Chapitre3-3.mp3">3.3 - L'essor des entreprises technologiques</a></li>
     </ul>
 
-    <!-- Chapitre 4 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 4 - L'IMPACT DES RESEAUX SOCIAUX ET DE L'ECONOMIE COLLABORATIVE</li>
+    <li style="font-weight: bold;">Chapitre 4 - L'IMPACT DES RÉSEAUX SOCIAUX ET DE L'ÉCONOMIE COLLABORATIVE</li>
     <ul>
       <li><a href="Chapitre4-1.mp3">4.1 - L'essor des réseaux sociaux</a></li>
       <li><a href="Chapitre4-2.mp3">4.2 - Les plateformes de partage de contenu</a></li>
       <li><a href="Chapitre4-3.mp3">4.3 - L'économie collaborative</a></li>
     </ul>
 
-    <!-- Chapitre 5 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 5 - LES AVANCEES TECHNOLOGIQUES RECENTES : 5G, IOT ET IA</li>
+    <li style="font-weight: bold;">Chapitre 5 - LES AVANCÉES TECHNOLOGIQUES RÉCENTES : 5G, IOT ET IA</li>
     <ul>
       <li><a href="Chapitre5-1.mp3">5.1 - La révolution de la 5G</a></li>
       <li><a href="Chapitre5-2.mp3">5.2 - L'Internet des objets (IoT)</a></li>
       <li><a href="Chapitre5-3.mp3">5.3 - L'intelligence artificielle et Internet</a></li>
     </ul>
 
-    <!-- Chapitre 6 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 6 - CONSEQUENCES SOCIALES ET CULTURELLES DE L'INTERNET</li>
+    <li style="font-weight: bold;">Chapitre 6 - CONSÉQUENCES SOCIALES ET CULTURELLES DE L'INTERNET</li>
     <ul>
       <li><a href="Chapitre6-1.mp3">6.1 - Redéfinition des relations humaines</a></li>
       <li><a href="Chapitre6-2.mp3">6.2 - Impact sur la culture et les médias</a></li>
       <li><a href="Chapitre6-3.mp3">6.3 - Les défis de la vie privée</a></li>
     </ul>
 
-    <!-- Chapitre 7 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 7 - LES DEFIS DE LA GOUVERNANCE ET DE LA SECURITE SUR INTERNET</li>
+    <li style="font-weight: bold;">Chapitre 7 - LES DÉFIS DE LA GOUVERNANCE ET DE LA SÉCURITÉ SUR INTERNET</li>
     <ul>
       <li><a href="Chapitre7-1.mp3">7.1 - La gouvernance mondiale d'Internet</a></li>
       <li><a href="Chapitre7-2.mp3">7.2 - Les menaces de cybersécurité</a></li>
       <li><a href="Chapitre7-3.mp3">7.3 - Éthique et régulation des contenus</a></li>
     </ul>
 
-    <!-- Chapitre 8 -->
-    <li style="font-weight: bold; margin-top: 15px;">Chapitre 8 - LES PERSONNALITES CLES ET LES ENTREPRISES PIONNIERES DE L'INTERNET</li>
+    <li style="font-weight: bold;">Chapitre 8 - LES PERSONNALITÉS CLÉS ET LES ENTREPRISES PIONNIÈRES DE L'INTERNET</li>
     <ul>
       <li><a href="Chapitre8-1.mp3">8.1 - Les visionnaires de l'Internet</a></li>
       <li><a href="Chapitre8-2.mp3">8.2 - Les entreprises qui ont façonné le Web</a></li>
       <li><a href="Chapitre8-3.mp3">8.3 - Les événements marquants de l'histoire de l'Internet</a></li>
     </ul>
 
-<!-- ✅ Conclusion : lien cliquable en gras -->
-    <li style="margin-top: 15px;"><a href="Conclusion.mp3" style="font-weight: bold;">CONCLUSION - L'INTERNET : UNE EPOPEE EN CONSTANTE EVOLUTION</a></li>
-
-    <li style="list-style: none; margin-top: 10px; border-top: 1px solid #aaa; margin-bottom: 5px;"></li>
+    <li><a href="Conclusion.mp3" style="font-weight: bold;">CONCLUSION - L'INTERNET : UNE ÉPOPÉE EN CONSTANTE ÉVOLUTION</a></li>
   </ul>
 
   <p><a href="Annexes.pdf" target="_blank">📄 Consulter les annexes du livre</a></p>
@@ -99,4 +110,3 @@
   <script src="lecteur.js"></script>
 </body>
 </html>
-
